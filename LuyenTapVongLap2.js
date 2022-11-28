@@ -117,17 +117,42 @@ function printTri()
             }
         document.getElementById('result3_2').innerHTML = str2;
 
-        let str3 = '';
-        for (i3 = 5; i3 >= 1; i3--)
+        let str3 = '<table>';
+        for (i3 = 1; i3 <= 5; i3++)
             {
-                for (j3 = 1; j3 <= 6-i3; j3++)
+                for (j3 = 1; j3 <= 5; j3++)
                     {
-                        str3 += "*";
+                        if (j3 > 5 - i3) str3 += '*';
+                        else str3 += '&nbsp&nbsp';
                     }
                 str3 += "<br>"
             }
-        document.getElementById('result3_3').innerHTML = str3; 
+        document.getElementById('result3_3').innerHTML = str3;
 
+        let str4 = '<table>';
+        for (i4 = 1; i4 <= 5; i4++)
+            {
+                for (j4 = 1; j4 <= 5; j4++)
+                    {
+                        if (j4 >= i4) str4 += '*';
+                        else str4 += '&nbsp&nbsp';
+                    }
+                str4 += "<br>"
+            }
+        document.getElementById('result3_4').innerHTML = str4;
+    }
 
-
+function printRec()
+    {
+        let str = "";
+        for (i = 1; i <= 7; i++)
+            {
+                for (j = 1; j <= 20; j++)
+                    {
+                        if (i === 1 || i === 7 || j === 1 || j === 20) str += "*";
+                        else str += "&nbsp&nbsp";
+                    }
+                str += "<br>"
+            }
+        document.getElementById('result4').innerHTML = str;
     }
